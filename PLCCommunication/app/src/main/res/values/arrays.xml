@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="PLC_Name">
+        <!--<item>KeyencePLC 基恩士</item>-->
+        <!--<item>MelsecPLC 三菱</item>-->
+        <!--<item>OmronPLC 欧姆龙</item>-->
+        <item>SiemensPLC 西门子</item>
+    </string-array>
+
+    <string-array name="Keyence_Details_TYPE">
+        <item>AsciiNet 兼容3E帧协议的通讯</item>
+        <item>McNet 兼容3E帧协议的通讯</item>
+    </string-array>
+
+    <string-array name="Melsec_Details_TYPE">
+        <item>A1ENet 采用A兼容1E帧协议实现，使用二进制码通讯</item>
+        <item>McAsciiNet 采用Qna兼容3E帧协议实现，需要在PLC侧先的以太网模块先进行配置，必须为ASCII通讯格式</item>
+        <item>McNet 三菱的实际数据交互类</item>
+    </string-array>
+
+    <string-array name="Omron_Details_TYPE">
+        <item>FinsNet 欧姆龙Fins帧协议通讯类</item>
+    </string-array>
+
+    <string-array name="Siemens_Details_TYPE">
+        <!--<item>FetchWriteNet 使用了Fetch/Write协议来和西门子进行通讯，该种方法需要在PLC侧进行一些配置</item>-->
+        <item>S7Net 采用s7协议实现</item>
+    </string-array>
+</resources>

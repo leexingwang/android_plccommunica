@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context=".MainActivity">
+
+    <Spinner
+        android:id="@+id/plc_communication_type_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:entries="@array/PLC_Name"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Spinner
+        android:id="@+id/plc_communication_type_spinner_details"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/plc_communication_type_spinner"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/plc_communication_ip_address"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="IP地址"
+        android:inputType="textPersonName"
+        android:text="192.168.0.1"
+        app:layout_constraintTop_toBottomOf="@id/plc_communication_type_spinner_details"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="38dp" />
+
+    <EditText
+        android:id="@+id/plc_communication_port"
+        android:layout_width="172dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="端口号"
+        android:inputType="textPersonName"
+        android:text="102"
+        app:layout_constraintLeft_toRightOf="@id/plc_communication_ip_address"
+        app:layout_constraintTop_toBottomOf="@id/plc_communication_type_spinner_details"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="183dp"
+        tools:layout_editor_absoluteY="38dp" />
+
+    <Button
+        android:id="@+id/plc_communication_communication_done"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="8dp"
+        android:text="链接PLC"
+        app:layout_constraintTop_toBottomOf="@id/plc_communication_port"
+        tools:ignore="MissingConstraints,OnClick"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="158dp" />
+
+    <EditText
+        android:id="@+id/plc_communication_operate_address"
+        android:layout_width="171dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="操作地址"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@id/plc_communication_communication_done"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="134dp" />
+
+    <EditText
+        android:id="@+id/plc_communication_operate_values"
+        android:layout_width="172dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="写入值"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toRightOf="@id/plc_communication_operate_address"
+        app:layout_constraintTop_toBottomOf="@id/plc_communication_communication_done"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="92dp" />
+
+    <Button
+        android:id="@+id/plc_communication_commit_read"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="执行读操作"
+        app:layout_constraintTop_toBottomOf="@id/plc_communication_operate_values"
+        tools:ignore="MissingConstraints,OnClick"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="158dp" />
+
+    <Button
+        android:id="@+id/plc_communication_commit_write"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="执行写操作"
+        app:layout_constraintLeft_toRightOf="@id/plc_communication_commit_read"
+        app:layout_constraintTop_toBottomOf="@id/plc_communication_operate_values"
+        tools:ignore="MissingConstraints,OnClick"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="158dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="12dp"
+        android:background="@color/design_default_color_primary_dark"
+        app:layout_constraintTop_toBottomOf="@id/plc_communication_commit_read">
+
+        <TextView
+            android:id="@+id/plc_communication_commit_results"
+            android:layout_width="match_parent"
+            android:scrollbars="vertical"
+            android:textColor="@android:color/white"
+            android:layout_height="150dp" />
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
